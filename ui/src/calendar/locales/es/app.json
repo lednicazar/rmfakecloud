@@ -1,0 +1,198 @@
+{
+	"loading": "Cargando...",
+	"download-ready": "Descargar ahora!",
+	"navigation": {
+		"home": "Inicio",
+		"configuration": "Crear el calendario",
+		"features": "Características",
+		"faq": "FAQ"
+	},
+	"language": {
+		"full": "Español",
+		"partial": "Español (parcial)",
+		"en": "Inglés",
+		"cs": "Checo",
+		"da": "Danés",
+		"de": "Alemán",
+		"es": "Español",
+		"fr": "Francés",
+		"he": "Hebreo",
+		"hr": "Croata",
+		"hu": "Húngaro",
+		"it": "Italiano",
+		"nb": "Noruego Bokmål",
+		"nl": "Neerlandés",
+		"pl": "Polaco",
+		"pt-br": "Portugués (Brasil)",
+		"sl": "Esloveno",
+		"sv": "Sueco",
+		"tr": "Turco",
+		"ja": "Japonés",
+		"label": "Idioma"
+	},
+	"configuration": {
+		"selector": {
+			"template": {
+				"basic": {
+					"description": "Plantilla básica con itinerario diario y resumen mensual",
+					"label": "Básica"
+				},
+				"advanced": {
+					"description": "Plantilla avanzada con hábitos, tareas y retrospectiva semanal",
+					"label": "Avanzada"
+				},
+				"blank": {
+					"description": "Plantilla en blanco para personalizar desde cero",
+					"label": "En blanco"
+				},
+				"minimalistic": {
+					"description": "Plantilla minimalista con solo lo esencial",
+					"label": "Minimalista"
+				},
+				"label": "Plantilla"
+			},
+			"label": "Selector de plantilla",
+			"upload": "Subir configuración"
+		},
+		"general": {
+			"label": "Opciones generales",
+			"year": "Año",
+			"starting-month": {
+				"label": "Mes de inicio",
+				"description": "El primer mes del calendario generado. Elija algo como octubre si desea que su calendario cubra un semestre, en lugar de un año."
+			},
+			"month-count": {
+				"label": "Cantidad de meses",
+				"description": "¿Cuántos meses quiere generar en su calendario?"
+			},
+			"first-day-of-week": "Primer día de la semana",
+			"weekend": "Weekend",
+			"language": "Idioma",
+			"top-margin": {
+				"label": "Dejar espacio para la barra superior de reMarkable",
+				"description": "Añade 36pt de espacio arriba de cada página para que la barra de herramientas de reMarkable no cubra el contenido."
+			},
+			"device": "Dispositivo",
+			"dpi": "DPI",
+			"resolution": "Resolución",
+			"font": "Fuente",
+			"left-handed": {
+				"label": "Modo zurdo",
+				"description": "Mueve la barra lateral al lado derecho para usuarios zurdos"
+			},
+			"sidebar": {
+				"label": "Dejar espacio permanente para la barra lateral",
+				"description": "Si prefiere mantener la barra lateral siempre abierta, active esta opción para asegurar que el contenido del calendario nunca sea cubierto por ella."
+			}
+		},
+		"button": {
+			"refresh": "Actualizar avance",
+			"download": "Genera el calendario completo y descarga",
+			"generating": "Generando, por favor espere..."
+		},
+		"itinerary": {
+			"empty": "Planificación vacía",
+			"placeholder": {
+				"lines": "Cantidad de líneas",
+				"page": "Nuevo salto de página",
+				"item": "Elemento de planificación",
+				"agenda": "Agenda del día",
+				"tasks": "Tareas del día",
+				"notes": "Notas del día"
+			},
+			"button": {
+				"remove": "Quitar",
+				"item": "Agregar un elemento de planificación",
+				"page": "Iniciar una nueva página",
+				"lines": "Agregar líneas",
+				"agenda": "Agregar agenda",
+				"tasks": "Agregar tareas",
+				"notes": "Agregar notas",
+				"copy": "Copiar a todos los días"
+			}
+		},
+		"items-list": {
+			"button": {
+				"item": "Añadir un elemento",
+				"remove": "Quitar"
+			},
+			"empty": "Lista vacía",
+			"placeholder": "Elemento"
+		},
+		"toggle-form": {
+			"enabled": "Activado",
+			"disabled": "Desactivado"
+		},
+		"month": {
+			"title": "Resumen del mes",
+			"description": "El resumen del mes es un lugar para establecer objetivos para el próximo mes, realizar un seguimiento de los hábitos y hacer otros planes.",
+			"habits": {
+				"title": "Hábitos"
+			},
+			"itinerary": {
+				"title": "Planificación"
+			}
+		},
+		"week": {
+			"title": "Resumen de la semana",
+			"description": "El resumen de la semana le muestra una vista general de la semana para facilitar los planes.",
+			"todos": {
+				"title": "To-do list"
+			},
+			"retrospective": {
+				"title": "Retrospectiva de la semana",
+				"description": "La retrospectiva de la semana es un lugar para reflexionar sobre la semana pasada: ¿cómo fue, qué aprendio, que podría mejorar para la próxima semana?",
+				"itinerary": {
+					"title": "Planificación"
+				}
+			}
+		},
+		"day": {
+			"title": "Planificación diaria"
+		},
+		"special-dates": {
+			"title": "Fechas importantes",
+			"description": "Agregue sus cumpleaños, celebraciones, eventos, etc. Aquí puede recibir recordatorios sobre ellas en resúmenes semanales y páginas de días a medida que se acercan.",
+			"empty": "Sin fechas",
+			"placeholder": "¿Cuál es la ocasión?",
+			"button": {
+				"item": "Agregar fecha",
+				"remove": "Quitar"
+			},
+			"upload": {
+				"label": "Subir archivo de fechas especiales",
+				"loading": "Cargando...",
+				"error": "Error al cargar el archivo",
+				"success": "Archivo cargado correctamente"
+			},
+			"type": {
+				"holiday": "Festivo",
+				"event": "Evento"
+			}
+		},
+		"generation-description": "La generación de PDF se realiza completamente en su navegador, ¡no se envían datos a nuestros servidores!"
+	},
+	"preview": {
+		"title": "Vista previa del calendario",
+		"subtitle": "(solo se procesa el primer mes para la vista previa)",
+		"viewer-title": "Vista previa PDF",
+		"generating": {
+			"full": "Generando del calendario completo: esto podría llevar más de un minuto...",
+			"preview": "Generando la vista previa; espere, puede demorar un minuto."
+		},
+		"empty": {
+			"title": "Utilice el formulario de configuración para crear su calendario personalizado.",
+			"subtitle": "La vista previa aparecerá aquí."
+		}
+	},
+	"process": {
+		"title": "PDF listo",
+		"download": "Descargar",
+		"upload": "Procesar y subir a reMarkable",
+		"name": "Nombre del documento",
+		"confirm": "Procesar",
+		"working": "Procesando...",
+		"success": "Subido correctamente",
+		"error": "Error al procesar"
+	}
+}

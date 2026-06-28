@@ -48,6 +48,16 @@ const NavigationBar = () => {
                     Screen Share
                   </Nav.Link>
                 </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link as={NavLink} to="/calendar">
+                    Recalendar
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link as={NavLink} to="/recalendar-integration">
+                    ReCalendar Integration
+                  </Nav.Link>
+                </Nav.Item>
 				{ isAdmin() &&
 
 					<Nav.Item>

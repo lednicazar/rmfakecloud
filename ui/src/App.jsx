@@ -17,6 +17,8 @@ import Integrations from "./pages/Integrations";
 import Profile from "./pages/Profile";
 import Admin from "./pages/Admin";
 import ScreenShare from "./pages/ScreenShare";
+import ReCalendarIntegration from "./pages/ReCalendarIntegration";
+import Calendar from "./pages/Calendar";
 import NoMatch from "./pages/404";
 
 import "react-toastify/dist/ReactToastify.css";
@@ -52,6 +54,8 @@ export default function App() {
                 <PrivateRoute path="/integrations" component={Integrations} />
                 <PrivateRoute path="/profile" component={Profile} />
                 <PrivateRoute path="/screenshare" component={ScreenShare} />
+                <PrivateRoute path="/calendar" component={Calendar} />
+                <PrivateRoute path="/recalendar-integration" component={ReCalendarIntegration} />
                 <PrivateRoute path="/admin" roles={[Role.Admin]} component={Admin} />
 
                 <Route path="/login" component={Login} />

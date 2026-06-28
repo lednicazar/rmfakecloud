@@ -1,0 +1,36 @@
+html,
+body,
+#root {
+	height: 100%;
+}
+
+.input-group > .date-field {
+	width: 160px;
+}
+
+.special-date {
+	min-width: 120px;
+}
+
+.refresh-button {
+	bottom: 0;
+	z-index: 1050;
+}
+
+.language-select {
+	min-width: 150px;
+}
+
+.form-label {
+	margin-bottom: 0;
+	margin-top: 0.5rem;
+}
+
+button:not(:disabled).grab-handle {
+	cursor: move;
+	padding-left: 0;
+}
+
+.flex-basis-fit-content {
+	flex-basis: fit-content !important;
+}

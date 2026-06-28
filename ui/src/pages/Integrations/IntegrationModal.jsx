@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import { Button, Card } from "react-bootstrap";
 import apiService from "../../services/api.service";
-
 import { Alert } from "react-bootstrap";
+import ReCalendarForm from "./recalendar/ReCalendarForm";
 
 export default function IntegrationModal(params) {
   const { integration, onSave, headerText, onClose } = params;
@@ -29,19 +29,18 @@ export default function IntegrationModal(params) {
 
   function formIsValid() {
     const _errors = {};
-
     if (!integrationForm.name) _errors.error = "name is required";
-
+    if (integrationForm.provider === "vikunja") {
+      if (!integrationForm.address) _errors.error = "URL is required";
+      if (!integrationForm.accesstoken) _errors.error = "API token is required";
+    }
     setFormErrors(_errors);
-
     return Object.keys(_errors).length === 0;
   }
 
   async function handleSubmit(event) {
     event.preventDefault();
-
     if (!formIsValid()) return;
-
     try {
       await apiService.updateintegration({
         id: integration.ID,
@@ -63,6 +62,26 @@ export default function IntegrationModal(params) {
   }
 
   if (!integration) return null;
+
+  if (integrationForm.provider === "recalendar") {
+    return (
+      <Card>
+        <Card.Header>
+          <span>{headerText}</span>
+        </Card.Header>
+        <Card.Body>
+          <Form.Label>IntegrationID</Form.Label>
+          <Form.Control
+            className="font-weight-bold mb-3"
+            value={integration.ID}
+            disabled
+          />
+          <ReCalendarForm integration={integration} onSave={onSave} onClose={onClose} />
+        </Card.Body>
+      </Card>
+    );
+  }
+
   return (
     <Form onSubmit={handleSubmit}>
       <Card>
@@ -73,7 +92,7 @@ export default function IntegrationModal(params) {
           <div>
             <Alert variant="danger" hidden={!formErrors.error}>
               <Alert.Heading>An Error Occurred</Alert.Heading>
-              <div style={{'white-space': 'pre-wrap'}}>
+              <div style={{whiteSpace: "pre-wrap"}}>
                 {formErrors.error}
               </div>
             </Alert>
@@ -99,6 +118,7 @@ export default function IntegrationModal(params) {
               <option value="dropbox">Dropbox</option>
               <option value="webhook">Messaging webhook</option>
               <option value="ics">ICS Calendar</option>
+              <option value="recalendar">ReCalendar</option>
             </Form.Control>
 
             <Form.Label>Name</Form.Label>
@@ -108,6 +128,46 @@ export default function IntegrationModal(params) {
               name="name"
               onChange={handleChange}
             />
+
+            {integrationForm.provider === "vikunja" && (
+              <>
+                <Form.Label>Vikunja URL</Form.Label>
+                <Form.Control
+                  placeholder="https://vikunja.tudominio.com"
+                  value={integrationForm.address}
+                  name="address"
+                  onChange={handleChange}
+                />
+                <Form.Text className="text-muted">
+                  La URL base de tu instancia Vikunja (sin barra al final)
+                </Form.Text>
+
+                <Form.Label className="mt-3">API Token</Form.Label>
+                <Form.Control
+                  placeholder="eyJhbGciOiJIUzI1NiIs..."
+                  value={integrationForm.accesstoken}
+                  name="accesstoken"
+                  onChange={handleChange}
+                />
+                <Form.Text className="text-muted">
+                  En Vikunja: Settings → API Tokens → Create new token. Copia el token completo.
+                </Form.Text>
+
+                <Form.Label className="mt-3">Frecuencia de actualización</Form.Label>
+                <Form.Select
+                  name="endpoint"
+                  value={integrationForm.endpoint || "recalendar"}
+                  onChange={handleChange}
+                >
+                  <option value="recalendar">Con ReCalendar (al generar PDF)</option>
+                  <option value="1h">Cada 1 hora</option>
+                  <option value="24h">Cada 24 horas</option>
+                </Form.Select>
+                <Form.Text className="text-muted">
+                  "Con ReCalendar" descarga las tareas solo cuando generas el calendario.
+                </Form.Text>
+              </>
+            )}
 
             {(integrationForm.provider === "webdav" || integrationForm.provider === "ftp") && (
               <>

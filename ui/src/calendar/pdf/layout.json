@@ -1,0 +1,45 @@
+{
+  "page": {
+    "width": 447.292,
+    "height": 596.389
+  },
+  "rm_toolbar": {
+    "height": 40
+  },
+  "navigation": {
+    "button_width": 50,
+    "button_height": 16,
+    "button_spacing": 6,
+    "margin_left": 20,
+    "y": 487
+  },
+  "content": {
+    "agenda": {
+      "top": 455,
+      "bottom": 30,
+      "left": 32,
+      "right": 441.292
+    },
+    "tasks": {
+      "top_offset_from_nav": 22,
+      "bottom": 30,
+      "left": 20,
+      "right": 427.292,
+      "row_height": 22,
+      "checkbox_size": 9
+    },
+    "notes": {
+      "top_offset_from_nav": 25,
+      "bottom": 30,
+      "left": 20,
+      "right": 427.292,
+      "line_height": 20
+    }
+  },
+  "grid": {
+    "start_hour": 6,
+    "end_hour": 24,
+    "time_label_width": 26,
+    "hour_height": 23.616
+  }
+}
